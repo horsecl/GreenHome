@@ -12,6 +12,8 @@ JavaScript: Lógica del lado del cliente, manipulación del DOM, eventos e inter
 
 Amazon Web Services (AWS EC2): Infraestructura en la nube para el alojamiento y despliegue del servidor.
 
+3) Estructura del proyecto
+
 /var/www/HTML
 │
 ├── index.html                    # Página de inicio
