@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.pagina_inicio_sesion{
+    background: url(https://img.magnific.com/foto-gratis/plantas-jovenes-que-crecen-invernadero-comercial-plantas-muy-grandes_273609-14259.jpg?semt=ais_hybrid&w=740&q=80) no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+.barramagica{
+    background-color: #65B873 !important;
+}
+
+.card input.form-control {
+    border: 1px solid #adb5bd;
+}
+
+.card input.form-control:focus {
+    border-color: #65B873;
+    box-shadow: 0 0 0 0.2rem rgba(101, 184, 115, 0.25);
+}
