@@ -12,31 +12,28 @@ JavaScript: Lógica del lado del cliente, manipulación del DOM, eventos e inter
 
 Amazon Web Services (AWS EC2): Infraestructura en la nube para el alojamiento y despliegue del servidor.
 
-3) Estructura del proyecto:
-
 /var/www/HTML
 │
-├── index.html                   # Página de inicio
-├── index.js                     # Scripts de la página principal
-├── style.css                    # Estilos globales
-├── fondo.png                    # Imagen de fondo del sitio
-├── logo.png                     # Imagen del Hero banner
+├── index.html                    # Página de inicio
+├── index.js                      # Scripts de la página principal
+├── style.css                     # Estilos globales
+├── fondo.png                     # Imagen de fondo del sitio
+├── logo.png                      # Imagen del Hero banner
 │
-├── login/                       # Módulo de Autenticación
-│   ├── login.html               # Formulario de inicio de sesión
-│   ├── login.js                 # Lógica de autenticación y validación
-│   └── style.css                # Estilo de inicio de sesión
+├── login/                        # Módulo de Autenticación
+│   ├── login.html                 # Formulario de inicio de sesión
+│   ├── login.js                   # Lógica de autenticación y validación
+│   └── style.css                  # Estilo de inicio de sesión
 │
-├── Registro_Usuario/            # Módulo de Registro
-│   ├── registro.html            # Formulario para nuevos usuarios
-│   ├── registro.js              # Validaciones de registro y contraseñas
-│   └── style.css                # Estilo del formulario de registro
+├── Registro_Usuario/              # Módulo de Registro
+│   ├── registro.html              # Formulario para nuevos usuarios
+│   ├── registro.js                # Validaciones de registro y contraseñas
+│   └── style.css                  # Estilo del formulario de registro
 │
-└── resumen_Invernadero/         # Panel de Control
-├── resumen.html             # Métricas y tablas
-├── resumen.js               # Funcionamiento de reloj, sensores, contadores de sensores y plantas e interacciones de la pagina
-└── style.css                # Estilo del panel de control
-
+└── resumen_Invernadero/           # Panel de Control
+    ├── resumen.html                # Métricas y tablas
+    ├── resumen.js                  # Reloj, sensores, contadores y lógica de interacción
+    └── style.css                   # Estilo del panel de control
 4) Descripción de las principales funcionalidades.
 
 Monitoreo Ambiental: Visualización activa de mediciones de temperatura y humedad simuladas con reloj funcional.
