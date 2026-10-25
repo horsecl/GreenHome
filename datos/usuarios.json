@@ -1,0 +1,7 @@
+[
+  { "id": 1, "nombre": "Camila Rojas",   "correo": "camila.demo@gmail.com",   "contrasena": "Demo1234", "rol": "usuario" },
+  { "id": 2, "nombre": "Matías Soto",    "correo": "matias.demo@outlook.com", "contrasena": "Demo1234", "rol": "usuario" },
+  { "id": 3, "nombre": "Valentina Pérez","correo": "vale.demo@hotmail.com",   "contrasena": "Demo1234", "rol": "usuario" },
+  { "id": 4, "nombre": "Diego Fuentes",  "correo": "diego.demo@live.com",     "contrasena": "Demo1234", "rol": "usuario" },
+  { "id": 5, "nombre": "Admin Demo",     "correo": "admin.demo@gmail.com",    "contrasena": "Admin1234","rol": "administrador" }
+]

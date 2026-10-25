@@ -22,3 +22,5 @@ body.pagina_inicio_sesion{
     border-color: #65B873;
     box-shadow: 0 0 0 0.2rem rgba(101, 184, 115, 0.25);
 }
+
+[x-cloak] { display: none !important; }
