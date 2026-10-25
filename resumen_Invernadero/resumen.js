@@ -22,9 +22,9 @@ document.addEventListener('alpine:init', () => {
                 this.plantas = await respuesta.json();
             } catch (e) {
                 console.error("Error al cargar invernadero.json:", e);
-                this.error = true; // Muestra la alerta de error en el HTML
+                this.error = true; 
             } finally {
-                this.cargando = false; // Oculta el spinner de carga
+                this.cargando = false;
             }
         },
 
