@@ -12,20 +12,7 @@ document.addEventListener('alpine:init', () => {
             const respuesta = await fetch('../datos/invernadero.json');
             this.plantas = await respuesta.json();
 
-            try {
-                const respuesta = await fetch('../datos/invernadero.json');
-               
-                if (!respuesta.ok) {
-                    throw new Error('No se pudo obtener el archivo JSON');
-                }
-
-                this.plantas = await respuesta.json();
-            } catch (e) {
-                console.error("Error al cargar invernadero.json:", e);
-                this.error = true; 
-            } finally {
-                this.cargando = false;
-            }
+            this.cargando = false;
         },
 
         get filtrar() {
