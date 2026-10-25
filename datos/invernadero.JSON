@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "sensor": "Sensor Humedad suelo 01",
+    "planta": "Tomate Cherry",
+    "ubicacion": "Sector Norte",
+    "estado": "Óptimo",
+    "fechaRegistro": "2026-10-20 09:30:00"
+  },
+  {
+    "id": 2,
+    "sensor": "Sensor Humedad suelo 02",
+    "planta": "Lechuga Hidropónica",
+    "ubicacion": "Sector Sur",
+    "estado": "Alerta",
+    "fechaRegistro": "2026-10-21 11:15:00"
+  },
+  {
+    "id": 3,
+    "sensor": "Sensor Humedad suelo 03",
+    "planta": "Albahaca",
+    "ubicacion": "Sector Este",
+    "estado": "Óptimo",
+    "fechaRegistro": "2026-10-21 14:22:00"
+  },
+  {
+    "id": 4,
+    "sensor": "Sensor Humedad Suelo 04",
+    "planta": "Pimiento Morrón",
+    "ubicacion": "Sector Norte",
+    "estado": "Óptimo",
+    "fechaRegistro": "2026-10-22 08:00:00"
+  },
+  {
+    "id": 5,
+    "sensor": "Sensor Humedad suelo 05",
+    "planta": "Frutilla Silvestre",
+    "ubicacion": "Sector Oeste",
+    "estado": "Mantenimiento",
+    "fechaRegistro": "2026-10-22 10:45:00"
+  }
+]
