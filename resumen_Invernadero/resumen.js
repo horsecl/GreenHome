@@ -1,36 +1,53 @@
- document.addEventListener('alpine:init', () => {
-        Alpine.data('gestionInvernadero', () => ({
-         plantas: [],
-         busqueda: '',
-         nuevoSensor: '',
-         nuevaPlanta: '',
+document.addEventListener('alpine:init', () => {
+    Alpine.data('gestionInvernadero', () => ({
+        plantas: [],
+        busqueda: '',
+        nuevoSensor: '',
+        nuevaPlanta: '',
+        mostrarAyuda: false,
+        cargando: true,
+        error: false,
             
-            async init() {
-                const respuesta = await fetch('../datos/invernadero.json');
-                this.plantas = await respuesta.json();
-            },
+        async init() {
+            const respuesta = await fetch('../datos/invernadero.json');
+            this.plantas = await respuesta.json();
 
-            get filtrar() {
-                if(this.busqueda.trim() === ''){
-                return this.plantas;
+            try {
+                const respuesta = await fetch('../datos/invernadero.json');
+               
+                if (!respuesta.ok) {
+                    throw new Error('No se pudo obtener el archivo JSON');
+                }
+
+                this.plantas = await respuesta.json();
+            } catch (e) {
+                console.error("Error al cargar invernadero.json:", e);
+                this.error = true; // Muestra la alerta de error en el HTML
+            } finally {
+                this.cargando = false; // Oculta el spinner de carga
             }
+        },
+
+        get filtrar() {
+            if(this.busqueda.trim() === ''){
+            return this.plantas;
+        }
             const cosa = this.busqueda.toLowerCase();
             return this.plantas.filter(item => item.planta.toLowerCase().includes(cosa));
             },
             
-            agregarRegistro() {
+        agregarRegistro() {
             if (!this.nuevoSensor || !this.nuevaPlanta) return;
 
             const ahora = new Date();
             const fechaHora = `${ahora.getFullYear()}-${String(ahora.getMonth()+1).padStart(2,'0')}-${String(ahora.getDate()).padStart(2,'0')} ${ahora.toLocaleTimeString()}`;
 
-                this.plantas.push({
-                    id: Date.now(),
-                    sensor: this.nuevoSensor,
-                    planta: this.nuevaPlanta,
-                    fecha: fechaHora
-                });
-
+            this.plantas.push({
+                id: Date.now(),
+                sensor: this.nuevoSensor,
+                planta: this.nuevaPlanta,
+                fecha: fechaHora
+            });
                 this.nuevoSensor = '';
                 this.nuevaPlanta = '';
             },
@@ -51,6 +68,7 @@
             elemReloj.textContent = `${horas}:${minutos}:${segundos}`;
         }
     }
+
     function simularAmbiente() {
         const elemTemp = document.getElementById('temperatura');
         const elemHumedad = document.getElementById('humedad');
@@ -65,9 +83,10 @@
             elemHumedad.textContent = humedad;
         }
     }
+
     document.addEventListener('DOMContentLoaded', () => {
         actualizarReloj();
         simularAmbiente();
         setInterval(actualizarReloj, 1000);
         setInterval(simularAmbiente, 5000);
-    });
+    }); 
