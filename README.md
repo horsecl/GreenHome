@@ -24,8 +24,8 @@ Amazon Web Services (AWS EC2): Infraestructura en la nube para el alojamiento y 
 ├── logo.jpg                    # Imagen del Hero banner
 │
 ├── datos/                      # Datos en JSON (cargados con fetch)
-│   └── usuarios.json           # Usuarios ficticios de prueba
-│
+│   ├──usuarios.json            # Usuarios ficticios de prueba
+│   └── invernadero.json        #Simulacion de datos de sensor-planta previamente guardados
 ├── login/                      # Módulo de autenticación
 │   ├── login.html              # Formulario de inicio de sesión (Alpine.js)
 │   ├── login.js                # Componente loginApp(): fetch, validación y sesión
