@@ -64,3 +64,22 @@ IP Elástica: 34.237.209.6
 - **Sesión:** si las credenciales coinciden se guarda `sesion` (id, nombre, correo, rol; sin contraseña) en `localStorage`, se muestra un mensaje de bienvenida y se redirige al resumen.
 - **Cómo probar:** correo `camila.demo@gmail.com`, contraseña `Demo1234`. Para probar el error de carga, renombrar temporalmente `usuarios.json` y recargar.
 - **Limitaciones:** comprobar credenciales en el navegador no es autenticación real y el JSON es público, por eso solo contiene datos ficticios. `localStorage` guarda la sesión en este navegador, no en el servidor. El registro de usuarios no guarda cuentas nuevas.
+
+## 7. Resumen del Invernadero con Alpine.js
+
+Integración: Alpine.js se incorpora por CDN con <script defer> en el <head> del archivo HTML (resumen.html).
+
+Datos: Fuente de datos externa situada en datos/invernadero.json con objetos ficticios de prueba (id, sensor, planta, fecha).
+
+Flujo: Al iniciar el componente gestionInvernadero, la función reservada init() realiza un fetch('../datos/invernadero.json') una sola vez para poblar el arreglo en memoria (plantas). El spinner de carga se gestiona de forma reactiva con la variable cargando.
+Interacciones y Reactividad:
+
+Búsqueda: El filtro de texto utiliza x-model="busqueda" sobre un getter (filtrar) que filtra el arreglo local en tiempo real sin reiniciar la lista ni realizar peticiones HTTP adicionales.
+
+Registro: El formulario @submit.prevent="agregarRegistro" agrega un nuevo objeto con x-model directamente al arreglo local en memoria con la fecha/hora actual, actualizando instantáneamente la tabla y los contadores.
+
+Eliminación: Los registros se borran por ID único mediante eliminar(id) aplicando un .filter(), lo que mantiene la integridad aunque la lista esté filtrada.
+
+Cómo probar: Cargar la página resumen.html para verificar la descarga automática de plantas. Filtrar escribiendo "Tomate" u otro término en el buscador, agregar un registro nuevo con el formulario y eliminar una fila existente para observar la actualización reactiva de las tarjetas de totales (plantas.length).
+
+Limitaciones: Los registros agregados o eliminados viven únicamente en la memoria del estado local de Alpine.js durante la sesión actual; al recargar la página se restaurarán los datos del archivo estático invernadero.json, ya que no existe persistencia en una base de datos ni comunicación de escritura con un servidor backend.
